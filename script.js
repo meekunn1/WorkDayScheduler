@@ -30,12 +30,12 @@ $(document).ready(function(){
     $("#hour"+i).removeClass("future");
     $("#hour"+i).addClass("present");
   }
-  if (i >= hourNow){
+  if (i > hourNow){
     $("#hour"+i).removeClass("past");
     $("#hour"+i).removeClass("present");
     $("#hour"+i).addClass("future");
   }
-  if (i <= hourNow){
+  if (i < hourNow){
     $("#hour"+i).removeClass("present");
     $("#hour"+i).removeClass("future");
     $("#hour"+i).addClass("past");
