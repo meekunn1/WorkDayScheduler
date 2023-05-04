@@ -1,20 +1,8 @@
 // Wrap all code that interacts with the DOM in a call to jQuery to ensure that
 // the code isn't run until the browser has finished rendering all the elements
 // in the html.
-var lead = $(".lead");
 var currentDay = $("#currentDay");
-var hour8 = $("#hour8");
-var hour9 = $("#hour9");
-var hour10 = $("#hour10");
-var hour11 = $("#hour11");
-var hour12 = $("#hour12");
-var hour13 = $("#hour13");
-var hour14 = $("#hour14");
-var hour15 = $("#hour15");
-var hour16 = $("#hour16");
-var hour17 = $("#hour17");
 var saveBtn = $(".saveBtn");
-var textArea = $(".testArea");
 
 //display day function with added time display
 function displayTime(){
