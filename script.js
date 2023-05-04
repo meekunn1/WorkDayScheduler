@@ -51,15 +51,9 @@ saveBtn.on("click", function(event){
   event.preventDefault()
  console.log($(this).prev(".description").val());
  console.log($(this).closest('div').attr('id'));
- var textValue = $(this).prev(".description").val();
+ var textValue = $(this).prev(".description").val().trim();
  var textKey = $(this).closest('div').attr('id');
-
- if (textValue == ""){
-  return;
- }
- else {
  localStorage.setItem(textKey,textValue);
- }
 });
 
   // TODO: Add a listener for click events on the save button. This code should
