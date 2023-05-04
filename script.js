@@ -33,6 +33,71 @@ saveBtn.on("click", function(event){
  }
 });
 
+//display day function with added time display
+function displayTime(){
+currentDay.text(dayjs().format("dddd, MMMM D, YYYY h:mm A"))
+}
+displayTime()
+setInterval(() =>{
+    displayTime()
+}, 1000);
+
+//change the diplay by time
+$(document).ready(function(){
+  var hourNow = dayjs().format("HH");
+  setInterval(() =>{
+  console.log(hourNow);
+  console.log("hour"+hourNow);
+  for (var i = 0; i < 24; i++){
+  if ("#hour"+i == hourNow){
+    $("#hour"+i).removeClass("past");
+    $("#hour"+i).removeClass("future");
+    $("#hour"+i).addClass("present");
+  }
+  if ("#hour"+i >= hourNow){
+    $("#hour"+i).removeClass("past");
+    $("#hour"+i).removeClass("present");
+    $("#hour"+i).addClass("future");
+  }
+  if ("#hour"+i <= hourNow){
+    $("#hour"+i).removeClass("present");
+    $("#hour"+i).removeClass("future");
+    $("#hour"+i).addClass("past");
+  }
+//   if
+//   }
+// if (hourNow == 8){
+//   hour8,hour9,hour10,hour11,hour12,hour13,hour14,hour15,hour16,hour17.removeClass("past","presnt","future")
+//   hour8.addClass("present");
+//   hour9,hour10,hour11,hour12,hour13,hour14,hour15,hour16,hour17.addClass("future");
+// }
+// else if (hourNow == 9){
+//   hour8,hour9,hour10,hour11,hour12,hour13,hour14,hour15,hour16,hour17.removeClass("past","presnt","future")
+//   hour9.addClass("present");
+//   hour10,hour11,hour12,hour13,hour14,hour15,hour16,hour17.addClass("future");
+//   hour8.addClass("past")
+// }
+// else if (hourNow == 10){
+//   hour8,hour9,hour10,hour11,hour12,hour13,hour14,hour15,hour16,hour17.removeClass("past","presnt","future")
+//   hour10.addClass("present");
+//   hour11,hour12,hour13,hour14,hour15,hour16,hour17.addClass("future");
+//   hour8,hout9.addClass("past")
+// }
+// else if (hourNow == 11){
+//   hour8,hour9,hour10,hour11,hour12,hour13,hour14,hour15,hour16,hour17.removeClass("past","presnt","future")
+//   hour11.addClass("present");
+//   hour12,hour13,hour14,hour15,hour16,hour17.addClass("future");
+//   hour8,hout9.hour10.addClass("past");
+// }
+// else if (hourNow == 12){
+//   hour8,hour9,hour10,hour11,hour12,hour13,hour14,hour15,hour16,hour17.removeClass("past","presnt","future")
+//   hour12.addClass("present");
+//   hour13,hour14,hour15,hour16,hour17.addClass("future");
+//   hour8,hour9.hour10.hour11.addClass("past");
+// 
+}
+}, 1000);
+})
 
 
   // TODO: Add a listener for click events on the save button. This code should
