@@ -16,36 +16,21 @@ var hour17 = $("#hour17");
 var saveBtn = $(".saveBtn");
 var textArea = $(".testArea");
 
+//display day function with added time display
+function displayTime(){
+  currentDay.text(dayjs().format("dddd, MMMM D, YYYY h:mm A"))
+  }
+  displayTime()
+  setInterval(() =>{
+      displayTime()
+  }, 1000);  
+
 //get data from local storage on load
 $(document).ready(function(){
   for (var i = 8; i < 18; i++){
     $("#hour"+i).children("textarea").text(localStorage.getItem("hour"+i));
   }
 });
-//Button click to save function
-saveBtn.on("click", function(event){
-  event.preventDefault()
- console.log($(this).prev(".description").val());
- console.log($(this).closest('div').attr('id'));
- var textValue = $(this).prev(".description").val();
- var textKey = $(this).closest('div').attr('id');
-
- if (textValue == ""){
-  return;
- }
- else {
- localStorage.setItem(textKey,textValue);
- }
-});
-
-//display day function with added time display
-function displayTime(){
-currentDay.text(dayjs().format("dddd, MMMM D, YYYY h:mm A"))
-}
-displayTime()
-setInterval(() =>{
-    displayTime()
-}, 1000);
 
 //change the diplay by time
 $(document).ready(function(){
@@ -73,6 +58,21 @@ $(document).ready(function(){
 }, 1000);
 })
 
+//Button click to save function
+saveBtn.on("click", function(event){
+  event.preventDefault()
+ console.log($(this).prev(".description").val());
+ console.log($(this).closest('div').attr('id'));
+ var textValue = $(this).prev(".description").val();
+ var textKey = $(this).closest('div').attr('id');
+
+ if (textValue == ""){
+  return;
+ }
+ else {
+ localStorage.setItem(textKey,textValue);
+ }
+});
 
   // TODO: Add a listener for click events on the save button. This code should
   // use the id in the containing time-block as a key to save the user input in
