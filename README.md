@@ -10,10 +10,10 @@ NA
 
 ## Usage
 
-Go to the following url to access the webapp.
-[webapp url](sample url)
+To access, please visit the webpage url:
+[]
 
-![alt text](assets/images/screenshot.png)
+![cursor hover over save button at 9AM mark](pics/sample_screenshot.png)
 
 ## Credits
 
